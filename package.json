@@ -1,0 +1,22 @@
+{
+  "name": "therotatingbox",
+  "version": "1.0.0",
+  "description": "A box that rotate",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theasouka/therotatingbox.git"
+  },
+  "author": "TheAsouka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theasouka/therotatingbox/issues"
+  },
+  "homepage": "https://github.com/theasouka/therotatingbox#readme",
+  "dependencies": {
+    "electron": "^2.0.2"
+  }
+}
