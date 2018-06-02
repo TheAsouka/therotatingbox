@@ -3,24 +3,46 @@
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="p5.js"></script>
+    <script src="p5.dom.js"></script>
+    <script src="sketch.js"></script>
+
+    <style type="text/css">
+    .center {
+        margin: auto;
+        width: 50%;
+        border: 3px solid rgb(100, 100, 100);
+        padding: 10px;
+    }
+    .hello{
+        margin: auto;
+        width: 10%;
+        border: 3px solid rgb(24, 131, 173);
+        padding: 2px;
+        text-align: center;       
+    }
+
+    </style>
     <title>Main Window</title>
 </head>
 
 <body>
-    <h1>The Box !</h1>
-    <script src="p5.min.js"></script> 
-    <script src="sketch.js"></script>
+    <h1 class="center">The Box !</h1>
+
     <div>
         <button class="waves-effect waves-light btn" onclick="countUP()">Rotate</button>
         <button class="waves-effect waves-light btn" onclick="speedUP()">Speed UP</button>
         <button class="waves-effect waves-light btn" onclick="speedDown()">Speed Down</button>
+        <button class="waves-effect waves-light btn" onclick="changeBG()">Change BG color</button>
     </div>
-    <div id="display"></div>
-    <div id="display2"></div>
+
+    <div class="hello" id="display"></div>
+    <div class="hello "id="display2"></div>
     <script>
         var t = setInterval(function() {
             document.getElementById("display").innerHTML = speed;
             document.getElementById("display2").innerHTML = isRotate;
+            
         });
     </script>
 
