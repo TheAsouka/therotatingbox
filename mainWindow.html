@@ -6,6 +6,7 @@
     <script src="p5.js"></script>
     <script src="p5.dom.js"></script>
     <script src="sketch.js"></script>
+   <!-- <script src="main.js"></script> <!-- pas obligatoire si pas de fonction utiliser dans le html-->
 
     <style type="text/css">
     .center {
@@ -34,6 +35,7 @@
         <button class="waves-effect waves-light btn" onclick="speedUP()">Speed UP</button>
         <button class="waves-effect waves-light btn" onclick="speedDown()">Speed Down</button>
         <button class="waves-effect waves-light btn" onclick="changeBG()">Change BG color</button>
+        <button class="waves-effect waves-light btn" onclick="testing()">TEST</button>
     </div>
 
     <div class="hello" id="display"></div>
@@ -45,6 +47,23 @@
             
         });
     </script>
+
+<dl>
+        <dt onmouseover="menuDeroulant('smenu1');">Select a shape</dt>
+        <dd id="smenu1" style="display:none;" >
+        <ul >
+        <li><a id="s_box" onclick="getShape(id);" href="#">Box</a></li>
+        <li><a id="s_plane" onclick="getShape(id);" href="#">Plane</a></li>
+        <li><a id="s_sphere" onclick="getShape(id);" href="#">Sphere</a></li>
+        <li><a id="s_cylinder" onclick="getShape(id);" href="#">Cylinder</a></li>
+        <li><a id="s_corus" onclick="getShape(id);" href="#">Ring</a></li>
+        <li><a id="s_cone" onclick="getShape(id);" href="#">Cone</a></li>
+        <li><a id="s_ellipsoid" onclick="getShape(id);" href="#">Ellipsoïd</a></li>
+        </ul>
+         
+        </dd>
+</dl>
+
 
 </body>
 </html>

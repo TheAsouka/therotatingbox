@@ -1,3 +1,4 @@
+
 function setup() {
   //createCanvas(710, 500);
   var cnv = createCanvas(200, 200, WEBGL);
@@ -5,7 +6,7 @@ function setup() {
   var y = (windowHeight - height) / 2;
   y = y + 100;
   cnv.position(x, y);
-
+  //noLoop();
 }
 
 function rand(min,max){
@@ -19,8 +20,8 @@ var p1 = rand(0,255);
 var p2 = rand(0,255);
 var p3 = rand(0,255);
 
+
 function startRotation(){
-  //console.log("WORK");
   if (count % 2 == 0){
     rotateX(frameCount * speed);
     rotateY(frameCount * speed);
@@ -55,8 +56,37 @@ function changeBG(){
   p3 = rand(0,255);
 }
 
-function draw(){
-  background(p1,p2,p3);
-  startRotation();
-  box(50);
-}  
+
+
+function getShape(id) {
+  var shapeID = document.getElementById(id).id;
+  var shapeToDraw = shapeID.split("s_")[1];
+  console.log("getShape : "+shapeToDraw);
+  return shapeToDraw;
+}
+setInterval(function() {
+  // method to be executed;
+  if (typeof shapeToDraw !== 'undefined') {
+    // the variable is defined
+    console.log(shapeToDraw);
+  }
+  else{
+    console.log("you loose");
+  }
+}, 5000);
+
+
+
+function menuDeroulant(id){
+  var element = document.getElementById(id);
+  var etat = element.style.display;
+
+  if (etat == 'none'){
+      element.style.display = 'block';
+  }
+  else{
+      element.style.display = 'none';
+  }
+}
+
+
