@@ -14,13 +14,16 @@
 </head>
 
 <body>
-    <h1 class="center" id="titre">The Box !</h1>
-
-    <div>
-        <button class="waves-effectA" onclick="countUP()">Rotate</button>
-        <button class="waves-effect waves-light btn" onclick="speedUP()">Speed UP</button>
-        <button class="waves-effect waves-light btn" onclick="speedDown()">Speed Down</button>
-        <button class="waves-effect waves-light btn" onclick="changeBG()">Change BG color</button>
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo center" id="titre"></a>
+        </div>
+    </nav>
+    <div class="row">
+        <button class="col s6 waves-effect waves-light btn" onclick="countUP()">Rotate</button>
+        <button class="col s6 waves-effect waves-light btn" onclick="speedUP()" >Speed Up</button>
+        <button class="col s6 waves-effect waves-light btn" onclick="changeBG()">Change BG color</button>
+        <button class="col s6 waves-effect waves-light btn" onclick="speedDown()">Speed Down</button>
         <!--button class="waves-effect waves-light btn" onclick="testing()">TEST</button-->
     </div>
 
@@ -28,8 +31,10 @@
     <div class="jsvar "id="display2"></div>
     <script>
         var t = setInterval(function() {
-            document.getElementById("display").innerHTML = speed;
-            document.getElementById("display2").innerHTML = isRotate;
+
+            var speedToDisplay = String(speed);
+            document.getElementById("display").innerHTML = "Speed : "+speedToDisplay.substring(0,4);
+            document.getElementById("display2").innerHTML = "Rotation : "+isRotate;
 
             var shapeToDisplay = shapeToDraw;
             if (shapeToDisplay == "torus"){
@@ -37,22 +42,21 @@
             }
             document.getElementById("titre").innerHTML = "The "+shapeToDisplay.toUpperCase()+" !";
 
-        });
+        },10); //Pour firefox setInterval() doit obligatoirement avoir les 2 arguments. Chrome s'en tape.
     </script>
 
 <dl>
-        <dt onmouseover="menuDeroulant('smenu1');">Select a shape</dt>
-        <dd id="smenu1" style="display:none;" >
+    <dt onmouseover="menuDeroulant('smenu1');">Select a shape</dt>
+    <dd id="smenu1" class="section" style="display:none;" >
         <ul >
-        <li><a id="s_box" onclick="getShape(id);" href="#">Box</a></li>
-        <li><a id="s_plane" onclick="getShape(id);" href="#">Plane</a></li>
-        <li><a id="s_sphere" onclick="getShape(id);" href="#">Sphere</a></li>
-        <li><a id="s_cylinder" onclick="getShape(id);" href="#">Cylinder</a></li>
-        <li><a id="s_torus" onclick="getShape(id);" href="#">Ring</a></li>
-        <li><a id="s_cone" onclick="getShape(id);" href="#">Cone</a></li>
-        </ul>
-         
-        </dd>
+            <li><a id="s_box" onclick="getShape(id);" href="#" class="elem_list">Box</a></li>
+            <li><a id="s_plane" onclick="getShape(id);" href="#" class="elem_list">Plane</a></li>
+            <li><a id="s_sphere" onclick="getShape(id);" href="#" class="elem_list">Sphere</a></li>
+            <li><a id="s_cylinder" onclick="getShape(id);" href="#" class="elem_list">Cylinder</a></li>
+            <li><a id="s_torus" onclick="getShape(id);" href="#" class="elem_list">Ring</a></li>
+            <li><a id="s_cone" onclick="getShape(id);" href="#" class="elem_list">Cone</a></li>
+        </ul>   
+    </dd>
 </dl>
 
 

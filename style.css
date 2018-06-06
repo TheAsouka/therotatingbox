@@ -1,17 +1,15 @@
-.center {
-    margin: auto;
-    width: 50%;
-    border: 3px solid rgb(100, 100, 100);
-    padding: 10px;
-}
 .jsvar{
     margin: auto;
     width: 10%;
-    border: 3px solid rgb(24, 131, 173);
+    border: 3px solid rgb(31, 95, 11);
     padding: 2px;
     text-align: center;       
 }
 
-.waves-effectA{
-    border: 10px solid rgb(173, 24, 24);
+body{
+    background-color: rgb(90, 156, 168);
+}
+
+.elem_list{
+    color: rgb(72, 32, 117);
 }

@@ -83,7 +83,7 @@ function testing() {
 function draw() {
   background(p1,p2,p3);
   startRotation();
-  this[shapeToDraw](50);
+  this[shapeToDraw]();
 }
 
 
