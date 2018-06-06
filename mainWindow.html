@@ -1,50 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="UTF-8">
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="p5.js"></script>
     <script src="p5.dom.js"></script>
     <script src="sketch.js"></script>
    <!-- <script src="main.js"></script> <!-- pas obligatoire si pas de fonction utiliser dans le html-->
-
-    <style type="text/css">
-    .center {
-        margin: auto;
-        width: 50%;
-        border: 3px solid rgb(100, 100, 100);
-        padding: 10px;
-    }
-    .hello{
-        margin: auto;
-        width: 10%;
-        border: 3px solid rgb(24, 131, 173);
-        padding: 2px;
-        text-align: center;       
-    }
-
-    </style>
+    
     <title>Main Window</title>
 </head>
 
 <body>
-    <h1 class="center">The Box !</h1>
+    <h1 class="center" id="titre">The Box !</h1>
 
     <div>
-        <button class="waves-effect waves-light btn" onclick="countUP()">Rotate</button>
+        <button class="waves-effectA" onclick="countUP()">Rotate</button>
         <button class="waves-effect waves-light btn" onclick="speedUP()">Speed UP</button>
         <button class="waves-effect waves-light btn" onclick="speedDown()">Speed Down</button>
         <button class="waves-effect waves-light btn" onclick="changeBG()">Change BG color</button>
-        <button class="waves-effect waves-light btn" onclick="testing()">TEST</button>
+        <!--button class="waves-effect waves-light btn" onclick="testing()">TEST</button-->
     </div>
 
-    <div class="hello" id="display"></div>
-    <div class="hello "id="display2"></div>
+    <div class="jsvar" id="display"></div>
+    <div class="jsvar "id="display2"></div>
     <script>
         var t = setInterval(function() {
             document.getElementById("display").innerHTML = speed;
             document.getElementById("display2").innerHTML = isRotate;
-            
+
+            var shapeToDisplay = shapeToDraw;
+            if (shapeToDisplay == "torus"){
+                shapeToDisplay = "ring";
+            }
+            document.getElementById("titre").innerHTML = "The "+shapeToDisplay.toUpperCase()+" !";
+
         });
     </script>
 
@@ -56,9 +48,8 @@
         <li><a id="s_plane" onclick="getShape(id);" href="#">Plane</a></li>
         <li><a id="s_sphere" onclick="getShape(id);" href="#">Sphere</a></li>
         <li><a id="s_cylinder" onclick="getShape(id);" href="#">Cylinder</a></li>
-        <li><a id="s_corus" onclick="getShape(id);" href="#">Ring</a></li>
+        <li><a id="s_torus" onclick="getShape(id);" href="#">Ring</a></li>
         <li><a id="s_cone" onclick="getShape(id);" href="#">Cone</a></li>
-        <li><a id="s_ellipsoid" onclick="getShape(id);" href="#">Ellipsoïd</a></li>
         </ul>
          
         </dd>

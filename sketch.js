@@ -6,7 +6,6 @@ function setup() {
   var y = (windowHeight - height) / 2;
   y = y + 100;
   cnv.position(x, y);
-  //noLoop();
 }
 
 function rand(min,max){
@@ -19,6 +18,7 @@ var isRotate = "Off";
 var p1 = rand(0,255);
 var p2 = rand(0,255);
 var p3 = rand(0,255);
+shapeToDraw = "box"; // global
 
 
 function startRotation(){
@@ -40,6 +40,10 @@ function speedUP() {
 }
 
 function speedDown(){
+  
+  if (speed <= 0.01){
+    speed = 0.01;
+  }
   speed = speed - 0.01;
   console.log(speed);
   return speed;
@@ -56,25 +60,31 @@ function changeBG(){
   p3 = rand(0,255);
 }
 
-
-
 function getShape(id) {
   var shapeID = document.getElementById(id).id;
-  var shapeToDraw = shapeID.split("s_")[1];
+  shapeToDraw = shapeID.split("s_")[1]; // VARIABLE GLOBALE OBLIGATOIRE!! (En tout cas ça marche)
   console.log("getShape : "+shapeToDraw);
   return shapeToDraw;
 }
-setInterval(function() {
-  // method to be executed;
+
+/*
+function testing() {
   if (typeof shapeToDraw !== 'undefined') {
     // the variable is defined
-    console.log(shapeToDraw);
+    console.log("WIN : "+shapeToDraw);
   }
   else{
     console.log("you loose");
+    //shapeToDraw = "HELLO"; //Pour réutiliser, obligatoirement faire une variable globale !!
   }
-}, 5000);
+}
+*/
 
+function draw() {
+  background(p1,p2,p3);
+  startRotation();
+  this[shapeToDraw](50);
+}
 
 
 function menuDeroulant(id){
