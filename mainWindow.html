@@ -14,11 +14,13 @@
 </head>
 
 <body>
+
     <nav>
         <div class="nav-wrapper">
             <a class="brand-logo center" id="titre"></a>
         </div>
     </nav>
+
     <div class="row">
         <button class="col s6 waves-effect waves-light btn" onclick="countUP()">Rotate</button>
         <button class="col s6 waves-effect waves-light btn" onclick="speedUP()" >Speed Up</button>
@@ -29,6 +31,8 @@
 
     <div class="jsvar" id="display"></div>
     <div class="jsvar "id="display2"></div>
+    
+
     <script>
         var t = setInterval(function() {
 
@@ -46,7 +50,7 @@
     </script>
 
 <dl>
-    <dt onmouseover="menuDeroulant('smenu1');">Select a shape</dt>
+    <dt class="menuD" onmouseover="menuDeroulant('smenu1');">Select a shape</dt>
     <dd id="smenu1" class="section" style="display:none;" >
         <ul >
             <li><a id="s_box" onclick="getShape(id);" href="#" class="elem_list">Box</a></li>

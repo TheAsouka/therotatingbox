@@ -4,8 +4,8 @@ function setup() {
   var cnv = createCanvas(200, 200, WEBGL);
   var x = (windowWidth - width) / 2;
   var y = (windowHeight - height) / 2;
-  y = y + 100;
   cnv.position(x, y);
+  //cnv.parent('sketch-holder'); // your sketch will be in <div id="sketch-holder"></div>
 }
 
 function rand(min,max){
