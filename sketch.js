@@ -40,7 +40,7 @@ function speedUP() {
 }
 
 function speedDown(){
-  
+
   if (speed <= 0.01){
     speed = 0.01;
   }
@@ -62,7 +62,7 @@ function changeBG(){
 
 function getShape(id) {
   var shapeID = document.getElementById(id).id;
-  shapeToDraw = shapeID.split("s_")[1]; // VARIABLE GLOBALE OBLIGATOIRE!! (En tout cas ça marche)
+  shapeToDraw = shapeID.split("s_")[1]; // VARIABLE GLOBALE OBLIGATOIRE!! (En tout cas ça marche enfin putain)
   console.log("getShape : "+shapeToDraw);
   return shapeToDraw;
 }
